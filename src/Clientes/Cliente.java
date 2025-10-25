@@ -4,6 +4,8 @@
  */
 package Clientes;
 
+import Utilidades.IterableCollection;
+import Utilidades.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +13,7 @@ import java.util.List;
  *
  * @author jprod
  */
-public class Cliente {
+public class Cliente implements IterableCollection<MetodoPago>{
     private String id;
     private String nombre;
     private String email;
@@ -26,7 +28,11 @@ public class Cliente {
      * Cambiar por iterador
      * @return 
      */
-    public List<MetodoPago> getMetodosPago(){ return metodosPago; }
+    
+    @Override
+    public Iterator<MetodoPago> createIterator() {
+        return new MetodosDePagoIterator(metodosPago);
+    }  
     
     public void setNombre(String n){ this.nombre=n; }
     public void setEmail(String e){ this.email=e; }
@@ -52,5 +58,7 @@ public class Cliente {
     public String toString() {
         return "Cliente{" + "id=" + id + ", nombre=" + nombre + ", email=" + email + ", telefono=" + telefono + ", metodosPago=" + metodosPago + '}';
     }
+
+    
 
 }

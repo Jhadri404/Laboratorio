@@ -4,6 +4,7 @@
  */
 package Facturacion;
 
+import Utilidades.Iterator;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,5 +47,8 @@ public class RepositorioFacturas {
                     return (d.isEqual(desde)||d.isAfter(desde)) && (d.isEqual(hasta)||d.isBefore(hasta));
                 }).collect(Collectors.toList());
     }
-    
+     public Iterator<Factura> createIterator() {
+        return new FacturaIterator(new ArrayList<>(data.values()));
+    }
+     
 }

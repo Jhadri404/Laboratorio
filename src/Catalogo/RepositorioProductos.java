@@ -4,6 +4,7 @@
  */
 package Catalogo;
 
+import Utilidades.Iterator;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -48,5 +49,9 @@ public class RepositorioProductos {
         return productos.values().stream()
                 .filter(p->p.getCategoria()!=null && p.getCategoria().getId()==cat.getId())
                 .collect(Collectors.toList());
+    }
+    
+    public Iterator<Producto> createIterator() {
+        return new ProductoIterator(new ArrayList<>(productos.values()));
     }
 }

@@ -58,3 +58,10 @@ El diseño sigue principios de **buenas prácticas**, **encapsulamiento**, **sep
 └── README.md
 
 ## 🧩 Patrones de diseño aplicados
+Yo aplique el Metodo iterator para recorrer una colección de objetos sin exponer su estructura interna,
+En este proyecto existen diversas colecciones (clientes, productos, facturas, categorías), y todas se administran desde repositorios internos que usan estructuras como Map o List.
+Aplicar el patrón Iterator permite:
+Recorrer los elementos sin depender del tipo de colección (ya sea un List, Map, o Set).
+Encapsular la lógica de iteración, evitando que otras clases accedan directamente a las estructuras internas.
+Unificar la forma de recorrer datos en todos los módulos del sistema (Clientes, Catálogo, Facturación).
+Aumentar la mantenibilidad y escalabilidad, ya que si se cambia la estructura interna (por ejemplo, de HashMap a TreeMap), el resto del sistema no se ve afectado.

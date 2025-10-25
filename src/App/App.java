@@ -86,7 +86,10 @@ public class App {
 
     private static void menuCategorias(ServicioCatalogo catalogo){
         System.out.println("-- Categorías --");
-        catalogo.listarCategorias().forEach(System.out::println);
+        var it = catalogo.createIteratorCategorias();
+while (it.hasNext()) {
+    System.out.println(it.next());
+}
         System.out.println("a-Crear");
         System.out.println("b-Activar/Desactivar");
         System.out.println("Otra tecla para volver");
@@ -124,7 +127,10 @@ public class App {
 
     private static void menuProductos(ServicioCatalogo catalogo){
         System.out.println("-- Productos --");
-        catalogo.listarProductos().forEach(System.out::println);
+        var it = catalogo.createIteratorProductos();
+while (it.hasNext()) {
+    System.out.println(it.next());
+}
         System.out.println("a-Crear");
         System.out.println("e-Editar");
         System.out.println("d-Eliminar");
@@ -209,7 +215,10 @@ public class App {
 
     private static void menuClientes(ServicioClientes clientes){
         System.out.println("-- Clientes --");
-        clientes.listarClientes().forEach(System.out::println);
+        var it = clientes.createIterator();
+while (it.hasNext()) {
+    System.out.println(it.next());
+}
         System.out.println("a-Crear");
         System.out.println("e-Editar");
         System.out.println("d-Eliminar");
@@ -378,7 +387,10 @@ public class App {
                     System.out.print("N° factura: "); int n=Integer.parseInt(sc.nextLine());
                     fact.obtenerFactura(n).ifPresentOrElse(f -> {
                         System.out.println(f);
-                        f.getItems().forEach(System.out::println);
+                        var it = fact.createIterator();
+while (it.hasNext()) {
+    System.out.println(it.next());
+}
                         System.out.printf("Sub: %.2f  Imp: %.2f  Total: %.2f%n",
                                 f.getSubtotal(), f.getImpuesto(), f.getTotal());
                     }, () -> System.out.println(ERR + "No existe."));
@@ -397,7 +409,12 @@ public class App {
         System.out.println("3-Por rango de fecha");
         String op=sc.nextLine().trim();
         switch (op){
-            case "1" -> fact.listar().forEach(System.out::println);
+            case "1" -> {
+    var it = fact.createIterator();
+    while (it.hasNext()) {
+        System.out.println(it.next());
+    }
+    }
             case "2" -> {
                 try {
                     System.out.print("Estado (EMITIDA/PAGADA/ANULADA/PENDIENTE): ");
@@ -433,7 +450,10 @@ public class App {
 
     private static Categoria seleccionarCategoria(ServicioCatalogo catalogo){
         System.out.println("Categorías:");
-        catalogo.listarCategorias().forEach(System.out::println);
+        var it = catalogo.createIteratorCategorias();
+while (it.hasNext()) {
+    System.out.println(it.next());
+}
         System.out.print("Id categoría: ");
         try {
             int idc = Integer.parseInt(sc.nextLine());

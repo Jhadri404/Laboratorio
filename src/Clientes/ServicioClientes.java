@@ -4,6 +4,7 @@
  */
 package Clientes;
 
+import Utilidades.Iterator;
 import java.util.List;
 
 /**
@@ -51,5 +52,7 @@ public class ServicioClientes {
             repo.guardar(c);
         });
     }
-
+public Iterator<Cliente> createIterator() {
+    return repo.createIterator();
+}
 }

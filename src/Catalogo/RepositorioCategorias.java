@@ -4,6 +4,7 @@
  */
 package Catalogo;
 
+import Utilidades.Iterator;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -35,5 +36,8 @@ public class RepositorioCategorias {
      */
     public List<Categoria> obtenerTodo(){ 
         return new ArrayList<>(categorias.values());
+    }
+    public Iterator<Categoria> createIterator() {
+        return new CatalogoIterator(new ArrayList<>(categorias.values()));
     }
 }

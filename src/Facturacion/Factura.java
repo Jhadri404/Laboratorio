@@ -5,7 +5,7 @@
 package Facturacion;
 
 import Clientes.Cliente;
-import Facturacion.EstadoFactura;
+import Utilidades.Iterator;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,8 +26,13 @@ public class Factura {
     public LocalDateTime getFecha(){ return fecha; }
     /**
      * Iterator
+     * @return 
      */
-    public List<ItemFactura> getItems(){ return items; }
+    
+     public Iterator<ItemFactura> createIterator() {
+        return new ItemFacturaIterator(items);
+    }
+     
     public EstadoFactura getEstado(){ return estado; }
     
     public void setEstado(EstadoFactura e){ this.estado=e; }

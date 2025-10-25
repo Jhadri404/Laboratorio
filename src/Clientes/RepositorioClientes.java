@@ -4,11 +4,13 @@
  */
 package Clientes;
 
+import Utilidades.Iterator;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+
 
 /**
  *
@@ -29,5 +31,11 @@ public class RepositorioClientes {
         data.remove(id);
     }
     
-    public List<Cliente> obtenerTodo(){ return new ArrayList<>(data.values()); }
+    public List<Cliente> obtenerTodo(){ return new ArrayList<>(data.values()); 
+    }
+    
+    public Iterator<Cliente> createIterator() {
+        return new ClienteIterator(new ArrayList<>(data.values()));
+    }
 }
+
