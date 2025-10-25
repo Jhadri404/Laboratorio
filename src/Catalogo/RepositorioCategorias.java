@@ -37,3 +37,5 @@ public class RepositorioCategorias {
         return new ArrayList<>(categorias.values());
     }
 }
+    
+  

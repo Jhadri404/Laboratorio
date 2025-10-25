@@ -9,34 +9,65 @@ package Catalogo;
  * @author jprod
  */
 public class Producto {
-    private String codigo; // único visible al usuario
+
+    private String codigo;
     private String nombre;
     private double precio;
     private int stock;
     private Categoria categoria;
-    
-    public String getCodigo() { return codigo; }
-    public String getNombre() { return nombre; }
-    public double getPrecio() { return precio; }
-    public int getStock() { return stock; }
-    public Categoria getCategoria() { return categoria; }
-    
-    public void setNombre(String n){ this.nombre=n; }
-    public void setPrecio(double p){ this.precio=p; }
-    public void setStock(int s){ this.stock=s; }
-    public void setCategoria(Categoria c){ this.categoria=c; }
 
-    public Producto(String codigo, String nombre, double precio, int stock, Categoria categoria) {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.stock = stock;
-        this.categoria = categoria;
+    public Producto(Builder b) {
+        this.codigo = b.codigo;
+        this.nombre = b.nombre;
+        this.precio = b.precio;
+        this.stock = b.stock;
+        this.categoria = b.categoria;
     }
 
-    @Override
-    public String toString() {
-        return "Producto{" + "codigo=" + codigo + ", nombre=" + nombre + ", precio=" + precio + ", stock=" + stock + ", categoria=" + categoria + '}';
+    public Producto(String codigo, String nombre, double precio, int stock, Categoria cat) {
+        
     }
 
+    public Producto() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    void setStock(int stock) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    void setPrecio(double precio) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    void setNombre(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    void setCategoria(Categoria cat) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+
+    
 }

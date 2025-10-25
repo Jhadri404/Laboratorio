@@ -73,9 +73,9 @@ public class App {
         var c2 = new Categoria(2,"Tecnología","Electrónica", true);
         catalogo.crearCategoria(c1); catalogo.crearCategoria(c2);
 
-        catalogo.crearProducto(new Producto("A100","Arroz 1kg", 1150, 50, c1));
+       catalogo.crearProducto(new Producto("A100","Arroz 1kg", 1150, 50, c1));
         catalogo.crearProducto(new Producto("A200","Frijol 1kg", 1450, 40, c1));
-        catalogo.crearProducto(new Producto("T900","Audífonos BT", 15990, 10, c2));
+      catalogo.crearProducto(new Producto("T900","Audífonos BT", 15990, 10, c2));
 
         var cli = new Cliente("1","Ana Pérez","ana@correo.com","7000-0000");
         cli.addMetodoPago(new MetodoPago(1, TipoMetodoPago.TARJETA, "****-1234"));
@@ -146,7 +146,7 @@ public class App {
                         System.out.println(ERR + "Ya existe un producto con ese código.");
                         break;
                     }
-                    catalogo.crearProducto(new Producto(codigo,nombre,precio,stock,cat));
+                    catalogo.crearProducto(new Producto());
                     System.out.println(OK + "Producto creado.");
                 } catch (NumberFormatException e){
                     System.out.println(ERR + "Precio/Stock inválidos.");
