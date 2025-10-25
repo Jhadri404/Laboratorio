@@ -67,4 +67,6 @@ despues en la clase app se obtienen las instancias de los repositorios atravez d
 BUILDER -.-
 
 cree la clase builder para permitirme la creacion fuida de objetos de productos 
+asi con esta haciendo cambios en varias de las clases para poder aplicar builder , ya que si no hacia los cambios necesarios el proyecto no iba a funcionar correctamente 
+
 
