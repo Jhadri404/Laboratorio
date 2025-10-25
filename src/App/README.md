@@ -58,6 +58,7 @@ El diseño sigue principios de **buenas prácticas**, **encapsulamiento**, **sep
 └── README.md
 
 ## 🧩 Patrones de diseño aplicados
+<<<<<<< HEAD
 Yo aplique el Metodo iterator para recorrer una colección de objetos sin exponer su estructura interna,
 En este proyecto existen diversas colecciones (clientes, productos, facturas, categorías), y todas se administran desde repositorios internos que usan estructuras como Map o List.
 Aplicar el patrón Iterator permite:
@@ -65,3 +66,17 @@ Recorrer los elementos sin depender del tipo de colección (ya sea un List, Map,
 Encapsular la lógica de iteración, evitando que otras clases accedan directamente a las estructuras internas.
 Unificar la forma de recorrer datos en todos los módulos del sistema (Clientes, Catálogo, Facturación).
 Aumentar la mantenibilidad y escalabilidad, ya que si se cambia la estructura interna (por ejemplo, de HashMap a TreeMap), el resto del sistema no se ve afectado.
+=======
+
+
+FACTORY METHOD -.-
+ cuando aplique el patron factory method este lo aplique  creando el paquete factory y a este creandole 2 clases, 1 que es una clase de interface y la otra una java class 
+despues en la clase app se obtienen las instancias de los repositorios atravez de RepositorioFactory en lugar de instanciarlas directamente
+
+BUILDER -.-
+
+cree la clase builder para permitirme la creacion fuida de objetos de productos 
+asi con esta haciendo cambios en varias de las clases para poder aplicar builder , ya que si no hacia los cambios necesarios el proyecto no iba a funcionar correctamente 
+
+
+>>>>>>> origin/master
