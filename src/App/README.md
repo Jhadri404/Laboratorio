@@ -58,3 +58,13 @@ El diseño sigue principios de **buenas prácticas**, **encapsulamiento**, **sep
 └── README.md
 
 ## 🧩 Patrones de diseño aplicados
+
+
+FACTORY METHOD -.-
+ cuando aplique el patron factory method este lo aplique  creando el paquete factory y a este creandole 2 clases, 1 que es una clase de interface y la otra una java class 
+despues en la clase app se obtienen las instancias de los repositorios atravez de RepositorioFactory en lugar de instanciarlas directamente
+
+BUILDER -.-
+
+cree la clase builder para permitirme la creacion fuida de objetos de productos 
+
